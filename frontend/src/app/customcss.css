@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.edit {
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* Add position relative to the container */
+}
+
+/* Adjust the z-index values to control the stacking order */
+.containers {
+    max-width: 400px;
+    width: 100%;
+    position: relative; /* Add position relative to the container */
+    z-index: 1; /* Set a higher z-index for the container */
+}
+
+.containers .steps {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2; /* Set a higher z-index for the steps container */
+}
+
+.steps .circle {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 4px solid wheat;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 500;
+    color: black;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-color: wheat;
+    z-index: 3; /* Set a higher z-index for the circle */
+}
+
+.steps .circle.active{
+    border-color: #332D2D;
+    color: #332D2D;
+}
+
+.steps .progress-bar {
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: wheat;
+    z-index: 0; /* Set a lower z-index for the progress bar */
+}
+
+.progress-bar .indicator {
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background: #332D2D;
+    z-index: 1; /* Set a higher z-index for the indicator */
+}
+
+
+  /* the css for pagination */
+
+
+ .item {
+    align-items: center;
+    color: #FFF;
+    cursor: pointer;
+    display: flex;
+    font-size: 11px;
+    height: 30px;
+    justify-content: center;
+    width: 30px;
+  }
+  
+  .disabled-page {
+    color: #808e9b;
+  }
+  
+  .active {
+    border: solid 1px #808e9b;
+    border-radius: 40px;
+    color: #808e9b;
+  }
+  
+  
+  
+  .next {
+    border-left: solid 1px #808e9b;
+    font-size: 4px;
+    height: 40px;
+    position: absolute;
+    right: 0;
+    width: 30px;
+  }
+  
+
+  .pagination {
+    align-items: center;
+    background-color: #0fbcf9;
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    justify-content: center;
+    list-style-type: none;
+    position: relative;
+    width: 470px;
+  }
+  
+  .pagination-page {
+    font-weight: 700;
+  }
+  
+  .previous {
+    border-right: solid 1px #808e9b;
+    font-size: 4px;
+    height: 40px;
+    left: 0;
+    position: absolute;
+    width: 30px;
+  }
+  

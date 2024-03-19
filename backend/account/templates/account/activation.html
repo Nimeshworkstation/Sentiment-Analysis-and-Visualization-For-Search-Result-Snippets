@@ -1,0 +1,89 @@
+{% load i18n %}
+
+{% block subject %}
+{% blocktrans %}Account activation on {{ site_name }}{% endblocktrans %}
+{% endblock subject %}
+
+{% block text_body %}
+{% blocktrans %}You're receiving this email because you need to finish the activation process on {{ site_name }}.{% endblocktrans %}
+
+{% trans "Please go to the following page to activate your account:" %}
+{{ protocol }}://{{ domain }}/{{ url|safe }}
+
+<i>{% blocktrans %}If you face difficulties with account activation, kindly contact us at: contact@geekyshows.com{% endblocktrans %}</i>
+
+{% endblock text_body %}
+
+{% block html_body %}
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .activation-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: red;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .social-link {
+            margin: 5px;
+            padding: 5px;
+            border-radius: 10%;
+            font-size: 10px;
+            color: white;
+            text-decoration: none;
+        }
+        /* Define individual social media link styles */
+        .instagram {
+            background-color: #E1306C;
+        }
+        .twitter {
+            background-color: #1da1f2;
+        }
+        .linkedin {
+            background-color: #0077B5;
+        }
+        .youtube {
+            background-color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>{% blocktrans %}You're receiving this email because you need to finish the activation process on {{ site_name }}.{% endblocktrans %}</p>
+
+        <p style="margin-bottom: 20px;"><a class="activation-button" href="{{ protocol }}://{{ domain }}/{{ url|safe }}">Activate Account</a></p>
+
+        <span>Follow us:</span>
+        <div class="social-links">
+            <a class="social-link instagram" href="#">Instagram</a>
+            <a class="social-link twitter" href="#">Twitter</a>
+            <a class="social-link linkedin" href="#">LinkedIn</a>
+            <a class="social-link youtube" href="#">Youtube</a>
+        </div>
+
+        <i>{% blocktrans %}If you face difficulties with account activation, kindly contact us at: contact@geekyshows.com{% endblocktrans %}</i>
+    </div>
+</body>
+</html>
+{% endblock html_body %}
